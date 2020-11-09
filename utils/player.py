@@ -36,8 +36,5 @@ class Deck:
                 i.cards += [self.cards[0]]
                 self.cards.remove(self.cards[0])
 
-
-
-
     def __str__(self):
         return "This is a deck of cards."

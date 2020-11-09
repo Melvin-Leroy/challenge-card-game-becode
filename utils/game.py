@@ -15,15 +15,21 @@ class Board:
                 break
             else:
                 self.players += [player.Player(player_name)]
+                print("{} added to the players!".format(player_name))
         main_deck = player.Deck()
         main_deck.fill_deck()
-        print(main_deck.cards)
         main_deck.shuffle()
-        print(main_deck.cards)
         main_deck.distribute(self.players)
-        for i in self.players:
-            i.play()
-            self.active_cards += [i.play()]
+        for i in range(0, int(52 / len(self.players))):
+            self.active_cards = []
+            for j in self.players:
+                self.active_cards += [j.play()]
+                j.turn_count += 1
+            self.history_card += self.active_cards
+            self.turn_count += 1
+            print("turn nbr : {} \nCards played this turn : {}\nNumber of cards played in the game : {}".format(
+                self.turn_count, self.active_cards, len(self.history_card)
+            ))
 
 
 
