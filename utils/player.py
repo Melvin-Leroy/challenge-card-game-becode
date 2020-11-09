@@ -1,6 +1,5 @@
 from utils import card
 from random import shuffle
-from random import randint
 
 class Player:
     """
@@ -24,10 +23,14 @@ class Player:
 
         :return: The card he plays.
         """
-        card = self.cards[randint(0, len(self.cards))]
+        number = int(input("You have {} left, choose the index for te card to be played:".format(len(self.cards))))
+        card = self.cards[number]
         self.history += [card]
         print(self.name, self.turn_count, "played:", card.value, card.icon)
         return card
+
+    def __str__(self):
+        return "{} {} {} {} {}".format(self.cards, self.turn_count, self.name, self.number_of_cards, self.history)
 
 class Deck:
     """
@@ -67,4 +70,4 @@ class Deck:
                 self.cards.remove(self.cards[0])
 
     def __str__(self):
-        return "This is a deck of cards."
+        return "{}".format(self.cards)
