@@ -13,7 +13,7 @@ class Player:
     def play(self):
         card = self.cards[randint(0, len(self.cards))]
         self.history += [card]
-        print(self.name, self.turn_count, "played:", card.value, card.symbol)
+        print(self.name, self.turn_count, "played:", card.value, card.icon)
         return card
 
 class Deck:
@@ -29,18 +29,15 @@ class Deck:
     def shuffle(self):
         shuffle(self.cards)
 
-    #def distribute(self):
-        #for i in players:
+    def distribute(self, list_of_players):
+        number_of_cards = int(52 / len(list_of_players))
+        for i in list_of_players:
+            for j in range(0, number_of_cards):
+                i.cards += [self.cards[0]]
+                self.cards.remove(self.cards[0])
 
 
 
 
-test_deck = Deck()
-print(test_deck.cards)
-
-test_deck.fill_deck()
-print(len(test_deck.cards))
-print(test_deck.cards)
-
-test_deck.shuffle()
-print(test_deck.cards)
+    def __str__(self):
+        return "This is a deck of cards."
