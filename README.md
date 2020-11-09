@@ -3,10 +3,10 @@
 ## What
 
 A little card game.
-You can enter the wanted number of players (<= 52 obviously).
+You can enter the wanted number of players (=< 52 obviously).
 Each round, each player will have to pick a card in his hands and play it.
 
-There is no points counter.
+There is no points counter on the main branch. Never the less, on dev branch you can play with a game which has points and winners !
 
 ## Why
 
@@ -26,7 +26,4 @@ Melvin Leroy, junior AI developers.
 
 ## To do
 
-- Show the possibles cards to play for a player;
-- Point counter;
-- Winner rules;
-- End of the game rules.
+The game can always be more efficient and/or more fun. But all the features required have been implemented.
