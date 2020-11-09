@@ -17,7 +17,7 @@ class Symbol:
             self.color = "black"
 
     def __str__(self):
-        return "{} {}".format(self.icon, self.color)
+        return "icon : {}, color : {}".format(self.icon, self.color)
 
 class Card(Symbol):
     """
@@ -34,4 +34,4 @@ class Card(Symbol):
         self.value = value
 
     def __str__(self):
-        return "{} {} {}".format(self.value, self.icon, self.color)
+        return "value : {}, icon : {}, color : {}".format(self.value, self.icon, self.color)

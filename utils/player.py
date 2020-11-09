@@ -14,7 +14,7 @@ class Player:
         self.name = name
         self.cards = []
         self.turn_count = 0
-        self.number_of_cards = 0
+        self.number_of_cards = len(self.cards)
         self.history = []
 
     def play(self):
@@ -30,7 +30,8 @@ class Player:
         return card
 
     def __str__(self):
-        return "{} {} {} {} {}".format(self.cards, self.turn_count, self.name, self.number_of_cards, self.history)
+        return "hand : {}, turn counter : {}, name : {}, number of cards : {}, cards played : {}".format(
+            self.cards, self.turn_count, self.name, self.number_of_cards, self.history)
 
 class Deck:
     """
@@ -70,4 +71,4 @@ class Deck:
                 self.cards.remove(self.cards[0])
 
     def __str__(self):
-        return "{}".format(self.cards)
+        return "Cards in deck : {}".format(self.cards)
