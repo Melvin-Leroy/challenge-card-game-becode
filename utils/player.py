@@ -16,6 +16,7 @@ class Player:
         self.turn_count = 0
         self.number_of_cards = len(self.cards)
         self.history = []
+        self.points = 0
 
     def play(self):
         """
@@ -23,15 +24,15 @@ class Player:
 
         :return: The card he plays.
         """
-        number = int(input("You have {} left, choose the index for te card to be played:".format(len(self.cards))))
+        number = int(input("You have {} cards left, choose the index for te card to be played:".format(len(self.cards))))
         card = self.cards[number]
         self.history += [card]
-        print(self.name, self.turn_count, "played:", card.value, card.icon)
+        print("{} for turn {} played : {} of {}".format(self.name, self.turn_count, card.value, card.icon))
         return card
 
     def __str__(self):
-        return "hand : {}, turn counter : {}, name : {}, number of cards : {}, cards played : {}".format(
-            self.cards, self.turn_count, self.name, self.number_of_cards, self.history)
+        return "hand : {}, points : {}, turn counter : {}, name : {}, number of cards : {}, cards played : {}".format(
+            self.cards, self.points, self.turn_count, self.name, self.number_of_cards, self.history)
 
 class Deck:
     """
