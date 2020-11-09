@@ -48,4 +48,6 @@ class Board:
         print("You have no cards left, it's the end !")
 
     def __str__(self):
-        return "This is a board."
+        return "players : {}, turn : {}, cards played this turn : {}, cards played : {}".format(
+            self.players, self.turn_count, self.active_cards, self.history_card
+        )
